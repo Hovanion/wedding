@@ -124,7 +124,7 @@ a:hover {
   color: #fff;
   background:
     linear-gradient(var(--color-hero-overlay), var(--color-hero-overlay)),
-    url("images/lasvegas_2.jpeg")
+    url("images/las_vegas2.jpeg")
     center / cover no-repeat;
   padding: 6rem 1.5rem 4rem;
 }
