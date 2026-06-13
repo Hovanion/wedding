@@ -5,7 +5,7 @@
   --color-muted: #7a6f68;
   --color-accent: #b8896a;
   --color-accent-dark: #9a6f52;
-  --color-hero-overlay: rgba(45, 38, 34, 0.45);
+  --color-hero-overlay: rgba(45, 38, 34, 0.3);
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Montserrat", system-ui, sans-serif;
   --shadow-soft: 0 12px 40px rgba(61, 53, 48, 0.08);
@@ -124,14 +124,19 @@ a:hover {
   color: #fff;
   overflow: hidden;
   padding: 6rem 1.5rem 4rem;
+  background: #ebe4dc;
 }
 
 .hero-bg {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(78%, 820px);
+  height: 72%;
+  object-fit: contain;
+  opacity: 0.55;
+  filter: saturate(0.85) brightness(1.05);
   z-index: 0;
 }
 
@@ -146,6 +151,7 @@ a:hover {
   position: relative;
   z-index: 2;
   max-width: 720px;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
 }
 
 .hero-eyebrow {
