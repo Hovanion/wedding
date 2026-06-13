@@ -247,14 +247,10 @@ a:hover {
 }
 
 .story-image {
+  width: 100%;
   aspect-ratio: 4 / 5;
+  object-fit: cover;
   border-radius: var(--radius);
-  background:
-    linear-gradient(145deg, #e8ddd4, #d4c4b8);
-    display: grid;
-  place-items: center;
-  color: var(--color-muted);
-  font-style: italic;
   box-shadow: var(--shadow-soft);
 }
 
