@@ -135,11 +135,15 @@ a:hover {
   max-width: 720px;
 }
 
+.hero-intro {
+  margin-top: -3rem;
+}
+
 .hero-eyebrow {
   letter-spacing: 0.3em;
   text-transform: uppercase;
   font-size: 0.75rem;
-  margin: -2.5rem 0 1rem;
+  margin: 0 0 1rem;
 }
 
 .hero-title {
@@ -167,7 +171,7 @@ a:hover {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin: 2.5rem 0;
+  margin: 5.5rem 0 2.5rem;
   flex-wrap: wrap;
 }
 
