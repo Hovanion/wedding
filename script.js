@@ -65,7 +65,7 @@ function setupRsvpForm() {
     localStorage.setItem("wedding-rsvps", JSON.stringify(existing));
 
     form.reset();
-    alert("Thank you! Your RSVP has been saved locally in this demo template.");
+    alert("Köszönjük! A visszajelzésedet helyben mentettük ebben a demó sablonban.");
   });
 }
 
