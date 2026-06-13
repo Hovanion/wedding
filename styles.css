@@ -401,6 +401,53 @@ a:hover {
   margin: 0.5rem 0 0;
 }
 
+.contact {
+  background: var(--color-surface);
+}
+
+.contact-note {
+  text-align: center;
+  color: var(--color-muted);
+  margin: -2rem 0 2.5rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.contact-card {
+  background: var(--color-bg);
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 0.75rem;
+}
+
+.contact-card p {
+  margin: 0;
+}
+
+.contact-card a {
+  color: var(--color-accent-dark);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
 .site-footer {
   text-align: center;
   padding: 3rem 1.5rem;
@@ -415,7 +462,8 @@ a:hover {
 
 @media (max-width: 900px) {
   .story-grid,
-  .details-grid {
+  .details-grid,
+  .contact-grid {
     grid-template-columns: 1fr;
   }
 
