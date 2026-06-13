@@ -250,6 +250,23 @@ a:hover {
   font-size: 1.05rem;
 }
 
+.story-quote {
+  margin: 2rem 0 0;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid rgba(184, 137, 106, 0.25);
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.story-quote p {
+  margin: 0.35rem 0;
+  color: inherit;
+  font-size: inherit;
+}
+
 .story-image {
   width: 100%;
   aspect-ratio: 4 / 5;
