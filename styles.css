@@ -526,7 +526,7 @@ a:hover {
 .info-intro {
   text-align: center;
   color: var(--color-muted);
-  max-width: 560px;
+  max-width: none;
   margin: -1rem auto 1.75rem;
 }
 
@@ -785,14 +785,16 @@ a:hover {
 
 .site-footer {
   text-align: center;
-  padding: 1.25rem 1.5rem;
+  padding: 0.85rem 1.5rem;
+  background: #f3efe9;
+  border-top: 1px solid rgba(184, 137, 106, 0.18);
   color: var(--color-muted);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .footer-note {
-  margin-top: 0.25rem;
-  font-size: 0.75rem;
+  margin-top: 0.15rem;
+  font-size: 0.72rem;
 }
 
 @media (max-width: 900px) {
