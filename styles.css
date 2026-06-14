@@ -281,8 +281,35 @@ a:hover {
 
 .details-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.details-text {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  text-align: center;
+}
+
+.details-text h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 1rem;
+  color: var(--color-text);
+}
+
+.details-text p {
+  margin: 0 0 1rem;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.details-text p:last-child {
+  margin-bottom: 0;
 }
 
 .detail-card {
@@ -310,12 +337,6 @@ a:hover {
   color: var(--color-accent-dark);
   font-weight: 500;
   margin-bottom: 0.75rem;
-}
-
-.detail-note {
-  margin-top: 1rem;
-  color: var(--color-muted);
-  font-size: 0.95rem;
 }
 
 .timeline {
