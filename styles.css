@@ -458,6 +458,86 @@ a:hover {
   color: var(--color-muted);
 }
 
+.subpage {
+  padding-top: 5rem;
+}
+
+.faq-intro {
+  text-align: center;
+  color: var(--color-muted);
+  max-width: 560px;
+  margin: -2rem auto 3rem;
+}
+
+.faq-list {
+  max-width: 720px;
+  margin-inline: auto;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 0 1.25rem;
+}
+
+.faq-item summary {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 1.25rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  float: right;
+  color: var(--color-accent);
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item p {
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.25rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+.faq-item a {
+  color: var(--color-accent-dark);
+}
+
+.faq-back {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.faq-back .btn-primary {
+  background: var(--color-text);
+  color: #fff;
+}
+
+.faq-back .btn-primary:hover {
+  background: var(--color-accent-dark);
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--color-accent);
+}
+
 .contact {
   background: var(--color-surface);
 }
@@ -547,7 +627,7 @@ a:hover {
   }
 
   .nav-links.open {
-    max-height: 280px;
+    max-height: 420px;
     padding: 1rem 0;
   }
 
