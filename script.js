@@ -47,6 +47,62 @@ function setupNavigation() {
       toggle.setAttribute("aria-expanded", "false");
     });
   });
+
+  setupNavActiveState(links);
+}
+
+function setupNavActiveState(navLinksContainer) {
+  const sectionLinks = [...navLinksContainer.querySelectorAll("a")].filter((link) => {
+    const href = link.getAttribute("href") || "";
+    return href.startsWith("#") && href.length > 1;
+  });
+
+  if (sectionLinks.length === 0) return;
+
+  const sections = sectionLinks
+    .map((link) => document.getElementById(link.getAttribute("href").slice(1)))
+    .filter(Boolean);
+
+  const setActive = (id) => {
+    sectionLinks.forEach((link) => {
+      link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
+    });
+  };
+
+  const clearActive = () => {
+    sectionLinks.forEach((link) => link.classList.remove("is-active"));
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (visible[0]) {
+        setActive(visible[0].target.id);
+        return;
+      }
+
+      if (window.scrollY < 120) {
+        clearActive();
+      }
+    },
+    { rootMargin: "-35% 0px -45% 0px", threshold: [0, 0.15, 0.4] }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+
+  sectionLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      setActive(link.getAttribute("href").slice(1));
+    });
+  });
+
+  const initialId = window.location.hash.slice(1);
+  if (initialId && document.getElementById(initialId)) {
+    setActive(initialId);
+  }
 }
 
 const GOOGLE_FORM_HEIGHTS = {
