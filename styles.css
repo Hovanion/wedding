@@ -401,6 +401,29 @@ a:hover {
   margin: -2rem 0 2rem;
 }
 
+.form-embed {
+  max-width: 640px;
+  margin-inline: auto;
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.form-embed iframe {
+  display: block;
+  width: 100%;
+  min-height: 1200px;
+  border: 0;
+}
+
+.form-embed-fallback {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
 .rsvp-form {
   max-width: 520px;
   margin-inline: auto;

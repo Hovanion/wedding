@@ -49,27 +49,6 @@ function setupNavigation() {
   });
 }
 
-function setupRsvpForm() {
-  const form = document.getElementById("rsvp-form");
-  if (!form) return;
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(form);
-    const submission = Object.fromEntries(formData.entries());
-    submission.submittedAt = new Date().toISOString();
-
-    const existing = JSON.parse(localStorage.getItem("wedding-rsvps") || "[]");
-    existing.push(submission);
-    localStorage.setItem("wedding-rsvps", JSON.stringify(existing));
-
-    form.reset();
-    alert("Köszönjük! A visszajelzésedet helyben mentettük ebben a demó sablonban.");
-  });
-}
-
 updateCountdown();
 setInterval(updateCountdown, 1000);
 setupNavigation();
-setupRsvpForm();
