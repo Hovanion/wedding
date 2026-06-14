@@ -312,6 +312,12 @@ a:hover {
   margin-bottom: 0.75rem;
 }
 
+.detail-note {
+  margin-top: 1rem;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
 .timeline {
   list-style: none;
   margin: 0;
