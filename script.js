@@ -49,6 +49,49 @@ function setupNavigation() {
   });
 }
 
+const GOOGLE_FORM_HEIGHTS = {
+  desktop: 1705,
+  mobile: 1860,
+};
+
+function setupGoogleFormEmbed() {
+  const frame = document.getElementById("form-embed-frame");
+  const iframe = document.getElementById("google-form-iframe");
+  if (!frame || !iframe) return;
+
+  const setHeight = () => {
+    const mobile = window.matchMedia("(max-width: 480px)").matches;
+    const height = mobile ? GOOGLE_FORM_HEIGHTS.mobile : GOOGLE_FORM_HEIGHTS.desktop;
+    frame.style.height = `${height}px`;
+    iframe.style.height = `${height}px`;
+  };
+
+  setHeight();
+  window.addEventListener("resize", setHeight);
+}
+
+function cleanHomeUrl() {
+  const { pathname, search, hash } = window.location;
+  if (!/\/index\.html$/i.test(pathname)) return;
+
+  const cleanPath = pathname.replace(/\/index\.html$/i, "/");
+  window.history.replaceState(null, "", `${cleanPath}${search}${hash}`);
+}
+
+function setupFaqDeepLinks() {
+  const hash = window.location.hash;
+  if (!hash) return;
+
+  const target = document.querySelector(hash);
+  if (target instanceof HTMLDetailsElement) {
+    target.open = true;
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
 updateCountdown();
 setInterval(updateCountdown, 1000);
+cleanHomeUrl();
 setupNavigation();
+setupGoogleFormEmbed();
+setupFaqDeepLinks();

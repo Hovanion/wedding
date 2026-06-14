@@ -13,19 +13,19 @@
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Fő navigáció">
-      <a href="index.html" class="nav-logo">E &amp; I</a>
+      <a href="./" class="nav-logo">E &amp; I</a>
       <button class="nav-toggle" aria-label="Menü megnyitása" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="index.html#story">Történetünk</a></li>
-        <li><a href="index.html#details">Részletek</a></li>
-        <li><a href="index.html#schedule">Program</a></li>
-        <li><a href="index.html#music">Zenekérés</a></li>
+        <li><a href="./#story">Történetünk</a></li>
+        <li><a href="./#details">Részletek</a></li>
+        <li><a href="./#schedule">Program</a></li>
+        <li><a href="./#music">Zenekérés</a></li>
         <li><a href="visszajelzes.html" aria-current="page">Visszajelzés</a></li>
-        <li><a href="index.html#contact">Kapcsolat</a></li>
+        <li><a href="./#contact">Kapcsolat</a></li>
         <li><a href="gyik.html">GYIK</a></li>
       </ul>
     </nav>
@@ -38,19 +38,20 @@
         <h1 class="section-title">Visszajelzés</h1>
         <p class="rsvp-note">Kérjük, jelezz vissza 2026. július 1-ig</p>
         <div class="form-embed">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLScAgXT5mMRB5hsZEaZEvizrtJkBXNH5NCnqNfAKy63wKjsvLw/viewform?embedded=true"
-            title="Esküvői visszajelzés"
-            loading="lazy"
-            allowfullscreen
-          ></iframe>
+          <div class="form-embed-frame" id="form-embed-frame">
+            <iframe
+              id="google-form-iframe"
+              src="https://docs.google.com/forms/d/e/1FAIpQLScAgXT5mMRB5hsZEaZEvizrtJkBXNH5NCnqNfAKy63wKjsvLw/viewform?embedded=true"
+              title="Esküvői visszajelzés"
+              loading="lazy"
+              scrolling="no"
+            ></iframe>
+            <div class="form-embed-accent" aria-hidden="true"></div>
+            <div class="form-embed-login-mask" aria-hidden="true"></div>
+          </div>
         </div>
-        <p class="form-embed-fallback">
-          Ha az űrlap nem tölt be, nyisd meg közvetlenül:
-          <a href="https://forms.gle/5V9CT4835TWy664Y6" target="_blank" rel="noopener noreferrer">Google űrlap megnyitása</a>
-        </p>
         <p class="faq-back">
-          <a href="index.html" class="btn btn-primary">Vissza a főoldalra</a>
+          <a href="./" class="btn btn-primary">Vissza a főoldalra</a>
         </p>
       </div>
     </section>
@@ -58,7 +59,7 @@
 
   <footer class="site-footer">
     <p>Erzsó &amp; István — 2026. szeptember 19.</p>
-    <p class="footer-note"><a href="index.html">Főoldal</a></p>
+    <p class="footer-note"><a href="./">Főoldal</a></p>
   </footer>
 
   <script src="script.js"></script>
