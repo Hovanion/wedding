@@ -386,6 +386,12 @@ a:hover {
   padding-bottom: 0;
 }
 
+.timeline-note {
+  margin: 1.25rem 0 0 2rem;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
 .timeline-events li::before {
   content: "";
   position: absolute;
