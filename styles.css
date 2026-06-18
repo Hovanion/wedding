@@ -451,16 +451,24 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 0.65rem;
 }
 
-.map-actions .btn-map {
+.map-actions .btn-map:not(.btn-map--compact) {
   width: 100%;
   text-align: center;
 }
 
-.venue-map > .btn-map--secondary:last-child {
-  width: 100%;
+.map-actions-row {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.map-actions-row .btn-map--compact {
+  flex: 1;
+  min-width: 0;
+  padding: 0.45rem 0.5rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
   text-align: center;
 }
 
