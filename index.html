@@ -3,9 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Csatlakozzon hozzánk az esküvőnkön.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Gyertek az esküvőnkre — Erzsó és István, 2026. szeptember 19., Budapest.">
   <title>Erzsó &amp; István — Esküvő</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Erzsó &amp; István">
+  <meta property="og:title" content="Erzsó &amp; István — Esküvő">
+  <meta property="og:description" content="Gyertek az esküvőnkre — 2026. szeptember 19., Budapest.">
+  <meta property="og:url" content="https://www.erzso-es-istvan-2026.hu/">
+  <meta property="og:image" content="https://www.erzso-es-istvan-2026.hu/images/las_vegas2.jpeg">
+  <meta property="og:image:width" content="1086">
+  <meta property="og:image:height" content="724">
+  <meta property="og:image:alt" content="Erzsó és István — esküvői meghívó">
+  <meta property="og:locale" content="hu_HU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Erzsó &amp; István — Esküvő">
+  <meta name="twitter:description" content="Gyertek az esküvőnkre — 2026. szeptember 19., Budapest.">
+  <meta name="twitter:image" content="https://www.erzso-es-istvan-2026.hu/images/las_vegas2.jpeg">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -22,11 +38,11 @@
       </button>
       <ul class="nav-links">
         <li><a href="#program">Program</a></li>
+        <li><a href="visszajelzes.html">Visszajelzés</a></li>
         <li><a href="tortenetunk.html">Történetünk</a></li>
         <li><a href="#music">Zenekérés</a></li>
-        <li><a href="visszajelzes.html">Visszajelzés</a></li>
-        <li><a href="#contact">Kapcsolat</a></li>
         <li><a href="gyik.html">GYIK</a></li>
+        <li><a href="#contact">Kapcsolat</a></li>
       </ul>
     </nav>
   </header>
@@ -42,24 +58,27 @@
           <p class="hero-location">Budapest</p>
         </div>
         <div class="countdown" id="countdown" aria-live="polite">
-          <div class="countdown-item">
-            <span class="countdown-value" id="days">—</span>
-            <span class="countdown-label">Nap</span>
+          <div class="countdown-grid" id="countdown-grid">
+            <div class="countdown-item">
+              <span class="countdown-value" id="days">—</span>
+              <span class="countdown-label">Nap</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="hours">—</span>
+              <span class="countdown-label">Óra</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="minutes">—</span>
+              <span class="countdown-label">Perc</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="seconds">—</span>
+              <span class="countdown-label">Másodperc</span>
+            </div>
           </div>
-          <div class="countdown-item">
-            <span class="countdown-value" id="hours">—</span>
-            <span class="countdown-label">Óra</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-value" id="minutes">—</span>
-            <span class="countdown-label">Perc</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-value" id="seconds">—</span>
-            <span class="countdown-label">Másodperc</span>
-          </div>
+          <p class="countdown-message" id="countdown-message" hidden></p>
         </div>
-        <p class="hero-deadline">Visszajelzést 2026. július 9-ig várunk</p>
+        <p class="hero-deadline" id="rsvp-deadline-hero">Visszajelzést 2026. július 9-ig várunk</p>
         <a href="visszajelzes.html" class="btn btn-cta">Visszajelzés</a>
       </div>
     </section>
@@ -72,11 +91,25 @@
           <article class="detail-card">
             <div class="detail-icon" aria-hidden="true">♥</div>
             <h3>Szertartás</h3>
-            <p class="detail-time">Szombat, 15:00</p>
+            <p class="detail-time">Szombat, 13:30</p>
             <p>
-              Érkezés 14:30-tól.<br>
+              Érkezés 13:00-tól.<br>
               Fasori Evangélikus Templom<br>
               1071 Budapest, Városligeti fasor 17.
+            </p>
+          </article>
+          <article class="detail-card">
+            <div class="detail-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21s-6.5-4.5-6.5-9a6.5 6.5 0 0 1 13 0c0 4.5-6.5 9-6.5 9z"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            </div>
+            <h3>Fogadalomtétel</h3>
+            <p class="detail-time">Szombat, 16:00</p>
+            <p>
+              Duna Garden<br>
+              1203 Budapest, Vízisport utca 12-18. A. ép.
             </p>
           </article>
           <article class="detail-card">
@@ -91,7 +124,7 @@
                 <path d="M17.5 3c1.75 0 2.5 1.75 2.5 3.25S19.25 9.5 17.5 9.5"/>
               </svg>
             </div>
-            <h3>Vacsora és esti ünneplés</h3>
+            <h3>Vacsora</h3>
             <p class="detail-time">Szombat, 18:00</p>
             <p>
               Duna Garden<br>
@@ -111,8 +144,22 @@
                 src="https://maps.google.com/maps?q=1071+Budapest,+V%C3%A1rosligeti+fasor+17&amp;output=embed"
               ></iframe>
             </div>
+            <div class="map-actions">
+              <a
+                class="btn btn-map"
+                href="https://www.google.com/maps/dir/?api=1&amp;destination=1071+Budapest,+V%C3%A1rosligeti+fasor+17"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Útvonal a templomhoz</a>
+              <a
+                class="btn btn-map btn-map--secondary"
+                href="https://www.waze.com/ul?q=1071+Budapest,+V%C3%A1rosligeti+fasor+17&amp;navigate=yes"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Útvonal Waze-ben</a>
+            </div>
             <a
-              class="btn btn-map"
+              class="btn btn-map btn-map--secondary"
               href="https://maps.google.com/?q=1071+Budapest,+V%C3%A1rosligeti+fasor+17"
               target="_blank"
               rel="noopener noreferrer"
@@ -129,8 +176,22 @@
                 src="https://maps.google.com/maps?q=1203+Budapest,+V%C3%ADzisport+utca+12-18&amp;output=embed"
               ></iframe>
             </div>
+            <div class="map-actions">
+              <a
+                class="btn btn-map"
+                href="https://www.google.com/maps/dir/?api=1&amp;destination=1203+Budapest,+V%C3%ADzisport+utca+12-18"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Útvonal a Duna Gardenhez</a>
+              <a
+                class="btn btn-map btn-map--secondary"
+                href="https://www.waze.com/ul?q=1203+Budapest,+V%C3%ADzisport+utca+12-18&amp;navigate=yes"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Útvonal Waze-ben</a>
+            </div>
             <a
-              class="btn btn-map"
+              class="btn btn-map btn-map--secondary"
               href="https://maps.google.com/?q=1203+Budapest,+V%C3%ADzisport+utca+12-18"
               target="_blank"
               rel="noopener noreferrer"
@@ -141,39 +202,59 @@
           <h3>Fotózás és telefonhasználat</h3>
           <p>
             Van hivatalos fotósunk, ezért a templomban kérjük, tartsátok zsebben a telefont a szertartás alatt —
-            az estén pedig legyenünk inkább egymással, ne a feeddel. Utána jöhet minden kedvenc pillanata, mi is megosztjuk majd a képeket!
+            az estén pedig legyetek inkább egymással, ne a feeddel. Utána jöhet minden kedvenc pillanatotok, mi is megosztjuk majd a képeket!
           </p>
         </div>
         <div class="timeline">
           <time class="timeline-date" datetime="2026-09-19">2026. szeptember 19., szombat</time>
           <ol class="timeline-events">
             <li class="timeline-event">
-              <time class="timeline-time" datetime="2026-09-19T14:30">14:30</time>
-              <span class="timeline-label">Érkezés a templomhoz</span>
+              <time class="timeline-time" datetime="2026-09-19T13:00">13:00</time>
+              <span class="timeline-label">Vendégvárás a Fasori Evangélikus templomban</span>
             </li>
             <li class="timeline-event">
-              <time class="timeline-time" datetime="2026-09-19T15:00">15:00</time>
-              <span class="timeline-label">Szertartás a Fasori Evangélikus templomban</span>
+              <time class="timeline-time" datetime="2026-09-19T13:30">13:30</time>
+              <span class="timeline-label">Templomi szertartás a Fasori Evangélikus templomban</span>
+            </li>
+            <li class="timeline-event">
+              <time class="timeline-time" datetime="2026-09-19T14:00">14:00</time>
+              <span class="timeline-label">Fotózás a templomnál</span>
+            </li>
+            <li class="timeline-event">
+              <time class="timeline-time" datetime="2026-09-19T14:30">14:30</time>
+              <span class="timeline-label">Átjutás a Duna Gardenbe</span>
+            </li>
+            <li class="timeline-event">
+              <time class="timeline-time" datetime="2026-09-19T15:30">15:30</time>
+              <span class="timeline-label">Italok és megérkezés a Duna Gardenben</span>
             </li>
             <li class="timeline-event">
               <time class="timeline-time" datetime="2026-09-19T16:00">16:00</time>
-              <span class="timeline-label">Gratulációk és közös fotók</span>
-            </li>
-            <li class="timeline-event">
-              <time class="timeline-time" datetime="2026-09-19T17:00">17:00 körül</time>
-              <span class="timeline-label">Átvonulás / pihenő</span>
+              <span class="timeline-label">Fogadalomtétel a Duna Gardenben</span>
             </li>
             <li class="timeline-event">
               <time class="timeline-time" datetime="2026-09-19T18:00">18:00</time>
-              <span class="timeline-label">Vacsora és esti ünneplés a Duna Gardenben</span>
+              <span class="timeline-label">Vacsora a Duna Gardenben</span>
+            </li>
+            <li class="timeline-event">
+              <time class="timeline-time" datetime="2026-09-19T20:00">20:00</time>
+              <span class="timeline-label">Esküvői kvíz</span>
+            </li>
+            <li class="timeline-event">
+              <time class="timeline-time" datetime="2026-09-20T00:00">24:00</time>
+              <span class="timeline-label">Éjféli menü</span>
+            </li>
+            <li class="timeline-event">
+              <time class="timeline-time" datetime="2026-09-20T03:00">03:00</time>
+              <span class="timeline-label">Villanyoltás</span>
             </li>
           </ol>
           <aside class="timeline-note" role="note">
             <p><em>Megjegyzés: Nem lesz menyasszonytánc</em></p>
           </aside>
           <article class="program-day-contact">
-            <h3>A nap kérdései, késés, segítség</h3>
-            <p>Az esküvő napján Bánki Dávid a kapcsolattartó — késés, helyszín vagy bármilyen gyors kérdés esetén hívjátok bizalommal.</p>
+            <h3>A nap kérdései, késés, helyszín, segítség</h3>
+            <p>Az esküvő napján Bánki Dávid a kapcsolattartó, bármilyen kérdés esetén hívjátok bizalommal.</p>
             <a class="contact-link program-day-contact-link" href="tel:+36303843213">Bánki Dávid — +36 30 384 3213</a>
           </article>
         </div>
@@ -220,7 +301,7 @@
               </svg>
             </div>
             <h3>Gyerekek</h3>
-            <p>Igen, jöhetnek: lesz elkülönített játszószoba és füves terület is. Kisbabákkal is számolunk, dedikált pihenőszoba vár az édesanyákra a Duna Gardenben. A helyszín akadélymentes.</p>
+            <p>Igen, jöhetnek: lesz elkülönített játszószoba és füves terület is. Kisbabákkal is számolunk, dedikált pihenőszoba vár az édesanyákra a Duna Gardenben. A helyszín akadálymentes.</p>
             <a class="info-link" href="gyik.html#faq-kids">Részletek a GYIK-ben</a>
           </article>
           <article class="info-card">
@@ -236,7 +317,7 @@
               </svg>
             </div>
             <h3>Ajándékozás</h3>
-            <p>Nincs ajándéklista — a Ti jelenlétetek a legnagyobb ajándék. Ha mégis szeretnének meglepni minket, azt is örömmel fogadjuk.</p>
+            <p>Nincs ajándéklista — a ti jelenlétetek a legnagyobb ajándék. Ha mégis szeretnétek meglepni minket, azt is örömmel fogadjuk.</p>
             <a class="info-link" href="gyik.html#faq-gift">Részletek a GYIK-ben</a>
           </article>
         </div>
@@ -249,7 +330,7 @@
         <h2 class="section-title">Zenekérés</h2>
         <p class="music-note">
           Küldjetek egy számot, amire biztosan táncolnátok, vagy amihez valami kedves emlék fűződik.
-          Adják hozzá a közös Spotify listánkhoz, és mi gondoskodunk róla, hogy a hangulat stimmeljen.
+          Adjátok hozzá a közös Spotify listánkhoz, és mi gondoskodunk róla, hogy a hangulat stimmeljen.
         </p>
         <div class="music-box">
           <p class="music-icon" aria-hidden="true">♫</p>
@@ -261,7 +342,7 @@
           >
             Dal hozzáadása Spotifyon
           </a>
-          <p class="music-hint">A Spotify alkalmazásban vagy böngészőben nyitható meg.</p>
+          <p class="music-hint">A Spotify alkalmazásban vagy böngészőben is megnyitható.</p>
         </div>
       </div>
     </section>
@@ -321,6 +402,10 @@
   <footer class="site-footer">
     <p>Erzsó &amp; István — 2026. szeptember 19.</p>
     <nav class="footer-links" aria-label="Gyors linkek">
+      <a href="#program">Program</a>
+      <span aria-hidden="true">·</span>
+      <a href="tortenetunk.html">Történetünk</a>
+      <span aria-hidden="true">·</span>
       <a href="visszajelzes.html">Visszajelzés</a>
       <span aria-hidden="true">·</span>
       <a href="gyik.html">GYIK</a>

@@ -1,16 +1,60 @@
-const WEDDING_DATE = new Date("2026-09-19T15:00:00");
+const WEDDING_DATE = new Date("2026-09-19T13:30:00");
+const WEDDING_DAY_START = new Date("2026-09-19T00:00:00");
+const WEDDING_DAY_END = new Date("2026-09-20T00:00:00");
+const RSVP_DEADLINE = new Date("2026-07-10T00:00:00");
+
+const RSVP_DEADLINE_TEXT = {
+  before: {
+    hero: "Visszajelzést 2026. július 9-ig várunk",
+    note: "Kérjük, jelezzetek vissza 2026. július 9-ig",
+    faq: " A visszajelzéseket 2026. július 9-ig várjuk.",
+  },
+  after: {
+    hero: "Ha még nem jeleztetek vissza, írjatok nyugodtan",
+    note: "Ha még nem jeleztetek vissza, írjatok nyugodtan",
+    faq: " Ha még nem jeleztetek vissza, írjatok nyugodtan.",
+  },
+};
+
+function setupRsvpDeadline() {
+  const afterDeadline = new Date() >= RSVP_DEADLINE;
+  const messages = afterDeadline ? RSVP_DEADLINE_TEXT.after : RSVP_DEADLINE_TEXT.before;
+
+  const heroEl = document.getElementById("rsvp-deadline-hero");
+  const noteEl = document.getElementById("rsvp-deadline-note");
+  const faqEl = document.getElementById("rsvp-deadline-faq");
+
+  if (heroEl) heroEl.textContent = messages.hero;
+  if (noteEl) noteEl.textContent = messages.note;
+  if (faqEl) faqEl.textContent = messages.faq;
+}
 
 function updateCountdown() {
-  const now = new Date();
-  const diff = WEDDING_DATE - now;
-
+  const countdownEl = document.getElementById("countdown");
+  const gridEl = document.getElementById("countdown-grid");
+  const messageEl = document.getElementById("countdown-message");
   const daysEl = document.getElementById("days");
   const hoursEl = document.getElementById("hours");
   const minutesEl = document.getElementById("minutes");
   const secondsEl = document.getElementById("seconds");
 
-  if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+  if (!countdownEl || !gridEl || !messageEl || !daysEl || !hoursEl || !minutesEl || !secondsEl) return;
 
+  const now = new Date();
+
+  if (now >= WEDDING_DAY_END) {
+    showCountdownMessage(countdownEl, gridEl, messageEl, "Köszönjük, hogy velünk ünnepeltek");
+    return;
+  }
+
+  if (now >= WEDDING_DAY_START) {
+    showCountdownMessage(countdownEl, gridEl, messageEl, "Ma van a nagy nap!");
+    return;
+  }
+
+  hideCountdownMessage(countdownEl, gridEl, messageEl);
+
+  const diff = WEDDING_DATE - now;
   if (diff <= 0) {
     daysEl.textContent = "0";
     hoursEl.textContent = "0";
@@ -28,6 +72,20 @@ function updateCountdown() {
   hoursEl.textContent = String(hours).padStart(2, "0");
   minutesEl.textContent = String(minutes).padStart(2, "0");
   secondsEl.textContent = String(seconds).padStart(2, "0");
+}
+
+function showCountdownMessage(countdownEl, gridEl, messageEl, text) {
+  countdownEl.classList.add("is-message");
+  gridEl.hidden = true;
+  messageEl.hidden = false;
+  messageEl.textContent = text;
+}
+
+function hideCountdownMessage(countdownEl, gridEl, messageEl) {
+  countdownEl.classList.remove("is-message");
+  gridEl.hidden = false;
+  messageEl.hidden = true;
+  messageEl.textContent = "";
 }
 
 function setupNavigation() {
@@ -147,6 +205,7 @@ function setupFaqDeepLinks() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+setupRsvpDeadline();
 cleanHomeUrl();
 setupNavigation();
 setupGoogleFormEmbed();

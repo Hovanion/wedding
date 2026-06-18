@@ -179,10 +179,30 @@ a:hover {
 
 .countdown {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5.5rem 0 1.5rem;
+}
+
+.countdown-grid {
+  display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin: 5.5rem 0 1.5rem;
   flex-wrap: wrap;
+}
+
+.countdown-message {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  line-height: 1.35;
+  margin: 0;
+  max-width: 16ch;
+  text-align: center;
+}
+
+.countdown.is-message {
+  margin-top: 4.5rem;
+  margin-bottom: 2rem;
 }
 
 .hero-deadline {
@@ -323,15 +343,19 @@ a:hover {
   background: var(--color-surface);
 }
 
+.program {
+  padding-bottom: 1.5rem;
+}
+
 .program .timeline {
   margin-top: 2rem;
 }
 
 .details-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  max-width: 864px;
+  max-width: 1080px;
   margin-inline: auto;
 }
 
@@ -411,6 +435,33 @@ a:hover {
   transform: translateY(-1px);
   background: var(--color-accent-dark);
   text-decoration: none;
+}
+
+.btn-map--secondary {
+  background: transparent;
+  color: var(--color-accent-dark);
+  border: 1px solid rgba(184, 137, 106, 0.45);
+}
+
+.btn-map--secondary:hover {
+  background: rgba(184, 137, 106, 0.1);
+}
+
+.map-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.map-actions .btn-map {
+  width: 100%;
+  text-align: center;
+}
+
+.venue-map > .btn-map--secondary:last-child {
+  width: 100%;
+  text-align: center;
 }
 
 .venue-maps {
@@ -673,6 +724,11 @@ a:hover {
 
 .info-preview {
   background: var(--color-surface);
+  padding-top: 1.5rem;
+}
+
+.info-preview .section-title {
+  margin-bottom: 1.25rem;
 }
 
 .info-intro {
