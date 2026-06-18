@@ -21,6 +21,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -328,9 +329,9 @@ a:hover {
 
 .details-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  max-width: 864px;
+  max-width: 1080px;
   margin-inline: auto;
 }
 
@@ -393,6 +394,72 @@ a:hover {
   margin-bottom: 0.75rem;
 }
 
+.detail-card .btn-map {
+  margin-top: 1rem;
+}
+
+.btn-map {
+  display: inline-block;
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--color-accent);
+  color: #fff;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-map:hover {
+  transform: translateY(-1px);
+  background: var(--color-accent-dark);
+  text-decoration: none;
+}
+
+.venue-maps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  max-width: 1080px;
+  margin: 1.75rem auto 0;
+}
+
+.venue-map {
+  background: var(--color-bg);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+.venue-map-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0 0 0.35rem;
+}
+
+.venue-map-address {
+  margin: 0 0 1rem;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.map-embed {
+  overflow: hidden;
+  border-radius: calc(var(--radius) - 2px);
+  margin-bottom: 1rem;
+  border: 1px solid rgba(184, 137, 106, 0.18);
+}
+
+.map-embed iframe {
+  display: block;
+  width: 100%;
+  height: 220px;
+  border: 0;
+}
+
 .timeline {
   max-width: 720px;
   margin-inline: auto;
@@ -410,18 +477,64 @@ a:hover {
 .timeline-events {
   list-style: none;
   margin: 0;
-  padding: 0 0 0 2rem;
-  border-left: 1px solid rgba(184, 137, 106, 0.35);
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
 }
 
-.timeline-events li {
-  position: relative;
-  padding: 0 0 1.1rem 1.25rem;
+.timeline-event {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 0.85rem;
+  align-items: start;
+  padding: 0.85rem 1rem;
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(184, 137, 106, 0.12);
+}
+
+.timeline-time {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-accent-dark);
+  white-space: nowrap;
+}
+
+.timeline-label {
+  color: var(--color-text);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.program-day-contact {
+  margin-top: 1.25rem;
+  padding: 1.15rem 1.25rem;
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  border-left: 3px solid var(--color-accent);
+  text-align: left;
+}
+
+.program-day-contact h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0 0 0.5rem;
+}
+
+.program-day-contact p {
+  margin: 0 0 0.75rem;
   color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
 }
 
-.timeline-events li:last-child {
-  padding-bottom: 0;
+.program-day-contact-link {
+  font-weight: 500;
 }
 
 .timeline-note {
@@ -439,18 +552,6 @@ a:hover {
   color: var(--color-muted);
   font-size: 0.95rem;
   line-height: 1.6;
-}
-
-.timeline-events li::before {
-  content: "";
-  position: absolute;
-  left: -2rem;
-  top: 0.55rem;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  transform: translateX(-50%);
 }
 
 .rsvp {
@@ -792,10 +893,22 @@ a:hover {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
-  max-width: 1080px;
+  max-width: 900px;
   margin-inline: auto;
+}
+
+.contact-card--highlight {
+  border: 1px solid rgba(184, 137, 106, 0.35);
+  background: #fffaf6;
+}
+
+.contact-role {
+  margin: 0 0 0.65rem;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
 }
 
 .contact-card {
@@ -888,12 +1001,13 @@ a:hover {
   }
 
   .details-grid,
-  .contact-grid,
+  .venue-maps,
   .info-grid {
     grid-template-columns: 1fr;
   }
 
   .contact-grid {
+    grid-template-columns: 1fr;
     max-width: 432px;
   }
 
@@ -936,5 +1050,25 @@ a:hover {
 
   .nav-toggle[aria-expanded="true"] span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-event {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    padding: 0.95rem 1rem;
+  }
+
+  .timeline-time {
+    font-size: 1.25rem;
+  }
+
+  .timeline-label {
+    font-size: 1rem;
+  }
+
+  .map-embed iframe {
+    height: 200px;
   }
 }
