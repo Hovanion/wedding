@@ -164,24 +164,48 @@ function setupNavActiveState(navLinksContainer) {
 }
 
 const GOOGLE_FORM_HEIGHTS = {
-  desktop: 1705,
-  mobile: 1860,
+  desktop: 2500,
+  mobile: 2900,
+  submitted: 560,
 };
+const GOOGLE_FORM_HEIGHT_BUFFER = 180;
+const GOOGLE_FORM_MOBILE_BREAKPOINT = 768;
 
 function setupGoogleFormEmbed() {
   const frame = document.getElementById("form-embed-frame");
   const iframe = document.getElementById("google-form-iframe");
   if (!frame || !iframe) return;
 
-  const setHeight = () => {
-    const mobile = window.matchMedia("(max-width: 480px)").matches;
-    const height = mobile ? GOOGLE_FORM_HEIGHTS.mobile : GOOGLE_FORM_HEIGHTS.desktop;
-    frame.style.height = `${height}px`;
-    iframe.style.height = `${height}px`;
+  let loadCount = 0;
+
+  const isMobile = () => window.matchMedia(`(max-width: ${GOOGLE_FORM_MOBILE_BREAKPOINT}px)`).matches;
+
+  const getFormHeight = () => (isMobile() ? GOOGLE_FORM_HEIGHTS.mobile : GOOGLE_FORM_HEIGHTS.desktop);
+
+  const applyHeight = (height) => {
+    const nextHeight = Math.max(Math.round(height), 320);
+    frame.style.height = `${nextHeight}px`;
+    iframe.style.height = `${nextHeight}px`;
   };
 
-  setHeight();
-  window.addEventListener("resize", setHeight);
+  applyHeight(getFormHeight() + GOOGLE_FORM_HEIGHT_BUFFER);
+
+  iframe.addEventListener("load", () => {
+    loadCount += 1;
+
+    if (loadCount >= 2) {
+      applyHeight(GOOGLE_FORM_HEIGHTS.submitted);
+      frame.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    applyHeight(getFormHeight() + GOOGLE_FORM_HEIGHT_BUFFER);
+  });
+
+  window.addEventListener("resize", () => {
+    if (loadCount >= 2) return;
+    applyHeight(getFormHeight() + GOOGLE_FORM_HEIGHT_BUFFER);
+  });
 }
 
 function cleanHomeUrl() {
