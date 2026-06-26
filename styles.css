@@ -549,6 +549,15 @@ a:hover {
   border: 1px solid rgba(184, 137, 106, 0.12);
 }
 
+.timeline-event--no-time {
+  grid-template-columns: 1fr;
+}
+
+.timeline-event--no-time .timeline-label {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
 .timeline-time {
   font-family: var(--font-serif);
   font-size: 1.15rem;

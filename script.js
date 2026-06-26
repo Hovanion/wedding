@@ -1,4 +1,4 @@
-const WEDDING_DATE = new Date("2026-09-19T13:30:00");
+const WEDDING_DATE = new Date("2026-09-19T14:30:00");
 const WEDDING_DAY_START = new Date("2026-09-19T00:00:00");
 const WEDDING_DAY_END = new Date("2026-09-20T10:00:00");
 const RSVP_DEADLINE = new Date("2026-07-10T00:00:00");
