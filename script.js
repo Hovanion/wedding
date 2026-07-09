@@ -1,13 +1,13 @@
 const WEDDING_DATE = new Date("2026-09-19T14:30:00");
 const WEDDING_DAY_START = new Date("2026-09-19T00:00:00");
 const WEDDING_DAY_END = new Date("2026-09-20T10:00:00");
-const RSVP_DEADLINE = new Date("2026-07-10T00:00:00");
+const RSVP_DEADLINE = new Date("2026-07-16T00:00:00");
 
 const RSVP_DEADLINE_TEXT = {
   before: {
-    hero: "Visszajelzést 2026. július 9-ig várunk",
-    note: "Kérjük, jelezzetek vissza 2026. július 9-ig",
-    faq: " A visszajelzéseket 2026. július 9-ig várjuk.",
+    hero: "Visszajelzést 2026. július 15-ig várunk",
+    note: "Kérjük, jelezzetek vissza 2026. július 15-ig",
+    faq: " A visszajelzéseket 2026. július 15-ig várjuk.",
   },
   after: {
     hero: "Ha még nem jeleztetek vissza, írjatok nyugodtan",
